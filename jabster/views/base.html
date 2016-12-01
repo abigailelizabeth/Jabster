@@ -2,15 +2,24 @@
 <html>
   <head>
     <title>{{ title }}</title>
-        <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
       
   </head>
   <body>
+  <div class="navigation">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">JAJB!</a></li>
+    </ul>
+  </div>
 
-    {% block content %}{% endblock %}
+  {% block content %}{% endblock %}
 
-    <div class="footer">
+  <div class="footer">
     {% block footer %}(c) Jabster Inc. 2016{% endblock %}
-    </div>
+  </div>
+
   </body>
 </html>
