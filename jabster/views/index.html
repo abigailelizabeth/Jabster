@@ -1,0 +1,13 @@
+<!doctype html>
+<html>
+  <head>
+    <title>welcome to {{ title }}</title>
+  </head>
+  <body>
+    <ul>
+      {% for item in items %}
+        <p>{{ item.name }}</p>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
