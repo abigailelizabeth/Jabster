@@ -4,9 +4,10 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index.html', {
-		title : 'My first nunjucks page.',
+		title : 'Jabster!',
 		items : [
-		{ name : 'item#1' },
+		{ name : 'Test Item 1' },
+		{ name : 'Test Item 2' },
 		]
 	});
 });
