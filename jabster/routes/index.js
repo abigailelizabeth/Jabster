@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
+console.log("Ive reached index.js file");
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index.html', {

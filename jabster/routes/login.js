@@ -1,18 +1,6 @@
 var express = require('express');
 var router = express.Router();
 
-
-  /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index.html', {
-		title : 'Jabster!',
-		items : [
-		{ name : 'Test Item 1' },
-		{ name : 'Test Item 2' },
-		]
-	});
-});
-
 router.post('/login', (req, res) => {
 	// find the user in the database
 	// save the user as current user in session
@@ -22,7 +10,8 @@ router.post('/login', (req, res) => {
     res.redirect('/');
 });
 
-
-
+router.post('/register', (req, res) =>{
+	console.log("you are trying to register");
+});
 
 module.exports = router;
