@@ -5,7 +5,7 @@ var express = require('express');
 var nunjucks = require('nunjucks');
 
 const MongoClient = require('mongodb').MongoClient;
-
+var db;
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -13,6 +13,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
+var login = require('./routes/login')
 //var users = require('./routes/users');
 
 var app = express();
@@ -42,6 +43,7 @@ app.use(cookieParser());
 app.use(express.static('public'));
 
 app.use('/', index);
+app.user('/login', login);
 //app.use('/users', users);
 
 module.exports = app;
