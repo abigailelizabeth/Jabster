@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="login-form">
+	<h2>Sign In to Jabster!</h2>
+	<form method="POST" action="/login">
+		<p><input type="text" name="username" value="" placeholder="Username"></p>
+		<p><input type="password" name="password" value="" placeholder="Password"></p>
+		<p class="submit"><button type="submit" name="login">Login</button></p>
+	</form>
+</div>
+
+<div class="register-form">
+	<h2>New User? Create an account here!</h2>
+	<form method="POST" action="/register">
+		<p><input type="text" name="name" value="" placeholder="Your name" required></p>
+		<p><input type="text" name="username" value="" placeholder="Your username" required></p>
+		<p><input type="password" name="password" value="" placeholder="Your password" required></p>
+		<p class="submit"><button type="submit" name="register">Register</button></p>
+	</form>
+</div>
+{% endblock %}
