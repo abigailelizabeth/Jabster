@@ -43,7 +43,7 @@ app.use(cookieParser());
 app.use(express.static('public'));
 
 app.use('/', index);
-app.user('/login', login);
+app.use('/login', login);
 //app.use('/users', users);
 
 module.exports = app;
