@@ -2,10 +2,11 @@ console.log("HELLO");
 
 var express = require('express');
 
-var nunjucks = require('nunjucks')
+var nunjucks = require('nunjucks');
+
+const MongoClient = require('mongodb').MongoClient;
 
 var path = require('path');
-console.log("this is ath: " + path)
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
@@ -16,8 +17,12 @@ var index = require('./routes/index');
 
 var app = express();
 
-app.listen(3000, function() {
-	console.log('listening on 3000')
+MongoClient.connect('mongodb://abbyeb22:abbyjabster@ds115798.mlab.com:15798/jabster', (err, database) => {
+    if(err) return console.log(err);
+    db = database;
+    app.listen(3000, function(){
+    console.log('listening on 3000');
+    });
 });
 
 nunjucks.configure('views', {
