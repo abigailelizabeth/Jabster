@@ -1,11 +1,12 @@
 var express = require('express');
 var router = express.Router();
 
-console.log("Ive reached index.js file");
 /* GET home page. */
 router.get('/', function(req, res, next) {
+	var title = "Jabster";
+	if(req.query.greeting){ title = req.query.greeting;}
   res.render('index.html', {
-		title : 'Jabster!',
+		title : title,
 		items : [
 		{ name : 'Test Item 1' },
 		{ name : 'Test Item 2' },
