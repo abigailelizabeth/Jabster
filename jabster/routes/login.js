@@ -25,11 +25,28 @@ router.post('/register', (req, res) =>{
 	// save user information to database
 	// make new user current user in session
 	// redirect to index or profile page with active user set
-	console.log("you are trying to register");
-	db = req.db;
-	var usr = db.collection('users').find({username: req.body.username})
 
-	console.log(usr);
+	var name = req.body.name;
+	var userName = req.body.username;
+	var password = req.body.password;
+	console.log("you are trying to register");
+
+	var db = req.db;
+	var collection = db.collection('users');
+	collection.insert({
+		"name": name,
+		"username": userName,
+		"password": password
+	}, (err, doc) =>{
+		if (err) {
+			res.send("there was an error adding the information to the database.");
+		}
+		else {
+			var string = encodeURIComponent('Hello, ' + userName);
+			res.redirect('/?greeting=' + string);
+		}
+	});
+
 
 	// if (req.body.username != usr.username){
 	// 	console.log("User does not exist, creating new user");

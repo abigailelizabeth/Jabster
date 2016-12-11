@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
   res.render('index.html', {
 		title : title,
 		items : [
-		{ name : 'Test Item 1' },
+		{ name : '' },
 		{ name : 'Test Item 2' },
 		]
 	});
