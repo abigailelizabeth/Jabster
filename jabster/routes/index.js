@@ -14,8 +14,14 @@ router.get('/', function(req, res, next) {
 	});
 });
 
+/* GET login page. */
 router.get('/login', function(req, res, next){
 	res.render('login.html', {});
+});
+
+/* GET newBlog page. */
+router.get('/newBlog', function(req,res, next){
+	res.render('newBlog.html', {});
 });
 
 module.exports = router;

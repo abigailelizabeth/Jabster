@@ -12,6 +12,7 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var login = require('./routes/login');
+var newBlog = require('./routes/newBlog');
 //var users = require('./routes/users');
 
 var app = express();
@@ -48,5 +49,6 @@ app.use(function(req,res,next){
 
 app.use('/', index);
 app.use('/login', login);
+app.use('/newBlog', newBlog);
 
 module.exports = app;
