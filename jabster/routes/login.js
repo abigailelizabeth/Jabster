@@ -10,14 +10,20 @@ router.post('/login', (req, res) => {
 
 	db = req.db;
 	// var collection = db.get('users');
+
 	var usr = db.collection('users').findOne({username: req.body.username});
 	if (!usr.username) {
 		console.log("User not found!");
+		//req.flash('errorMessage', "Sorry no user found");
+		res.redirect('/login');
 	}
-	console.log(usr);
-    console.log(req.body);  
-    console.log('saved to database');
-    res.redirect('/');
+	else{
+		console.log(usr);
+	    console.log(req.body);  
+	    console.log('saved to database');
+	    res.redirect('/');
+	}
+	
 });
 
 router.post('/register', (req, res) =>{
