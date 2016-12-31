@@ -13,9 +13,15 @@ router.get('/', function(req, res, next) {
   res.render('index.html', {
 		title : title,
 		items : [
+<<<<<<< HEAD
 		{ name : 'Test Item 1' },
 		{ name : 'Test Item 2' }
 		], 
+=======
+		{ name : '' },
+		{ name : 'Test Item 2' },
+		]
+>>>>>>> d2d3b3b2b9f84b2f73b0e9ef72a104d63ef5d1a2
 	});
 });
 
@@ -27,6 +33,11 @@ router.get('/login', function(req, res, next){
 <<<<<<< HEAD
 module.exports = router;
 =======
+/* GET newBlog page. */
+router.get('/newBlog', function(req,res, next){
+	res.render('newBlog.html', {});
+});
+
 /* GET newBlog page. */
 router.get('/newBlog', function(req,res, next){
 	res.render('newBlog.html', {});

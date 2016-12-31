@@ -9,16 +9,12 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-//var flash = require('express-flash');
 
 var index = require('./routes/index');
 var login = require('./routes/login');
-<<<<<<< HEAD
-=======
 var newBlog = require('./routes/newBlog');
 //var users = require('./routes/users');
 
->>>>>>> 7202d0430b758d05d5a114bc5ba7f44defb2fc8a
 var app = express();
 
 MongoClient.connect('mongodb://abbyeb22:abbyjabster@ds115798.mlab.com:15798/jabster', (err, database) => {
@@ -34,7 +30,6 @@ nunjucks.configure('views', {
 	express   : app
 });
 
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 
@@ -44,9 +39,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-//app.use(flash());
 app.use(express.static('public'));
-
 
 // Make db accessible to router
 app.use(function(req,res,next){
